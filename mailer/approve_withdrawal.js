@@ -102,11 +102,11 @@ let create_mail_options = (userInfo) => {
                 <img src="https://softjovial.biz/css/images/IMG-20220829-WA0004~4.jpg"   alt="Company Logo" style="width: 80px; border-radius: 50%;">
             </div>
             <div style="text-align: center; margin-top: 20px;">
-                <h3 style="font-size: 24px; font-weight: bold; color: #333;">WITHDRAWAL <b style='color:green'>SUCCESSFUL</b></h3>
+                <h3 style="font-size: 24px; font-weight: bold; color: #333;">WITHDRAWAL Completed</h3>
             </div>
             <div style="margin-top: 30px;">
                 <p style="font-size: 18px; color: #555;">Dear ${userInfo.first_name} ${userInfo.last_name},</p>
-                <p style="font-size: 18px; color: #555;"> your withdrawal of $${userInfo.amount} from your softjovial trading account was successful and funds has been credited to the wallet specified during withdrawal</p>
+                <p style="font-size: 18px; color: #555;"> your withdrawal of $${userInfo.amount} from your softjovial trading account has been completed and funds has been credited to the wallet specified during withdrawal</p>
             </div>
             <div style="margin-top: 30px;">
                 <p style="font-size: 18px; color: #555;"> For more detailed informations, please login to your account</p>

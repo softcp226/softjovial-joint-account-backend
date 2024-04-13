@@ -6,22 +6,39 @@ const hashPassword = require("../hash/hashPassword");
 const User = require("../model/user");
 
 Router.post("/", async (req, res) => {
+  console.log(req.body)
   const isvalid = validateUser(req.body);
   if (isvalid != true)
     return res.status(400).json({ error: true, errMessage: isvalid });
 
   try {
-    const user = await User.findOne({ email: req.body.email });
+
+
+    const user = await User.findOne({$or: [
+      {primary_email: req.body.primary_email},
+       { primary_email: req.body.secondary_email},
+       { secondary_email: req.body.primary_email},
+       { secondary_email: req.body.secondary_email},
+
+    ] });
+    console.log(user)
     // console.log(user);
-    if (user) {
+    if (user !=null) {
+      if(user.primary_password)return res.status(400).json({error:true,errMessage:"User already has a joint account"})
+
       // console.log("use", user);
-      if (!user.password) {
+      if (!user.primary_password) {
         user.set({
-          email: req.body.email,
-          phone_number: req.body.phone_number,
-          country: req.body.country,
+          primary_email: req.body.primary_email,
+          secondary_email: req.body.secondary_email,
+
+          primary_phone_number:req.body.primary_phone_number,
+          secondary_phone_number:req.body.secondary_phone_number,
+
+          // phone_number: req.body.phone_number,
+          // country: req.body.country,
           // referral_link: `https://www.softjovial.com?${u}`,
-          referral_link: `https://softjovial.biz?${req.body.email}`,
+          referral_link: `https://softjovial.biz`,
 
           referral: req.body.referral,
         });
@@ -39,11 +56,14 @@ Router.post("/", async (req, res) => {
     }
 
     const newUser = await new User({
-      email: req.body.email,
-      phone_number: req.body.phone_number,
-      country: req.body.country,
+      primary_email: req.body.primary_email,
+          secondary_email: req.body.secondary_email,
+
+          primary_phone_number:req.body.primary_phone_number,
+          secondary_phone_number:req.body.secondary_phone_number,
+
       // referral_link: `https://www.softjovial.com?${req.body.email}`,
-      referral_link: `https://softjovial.biz?${req.body.email}`,
+      referral_link: `https://softjovial.biz`,
 
       referral: req.body.referral,
     });

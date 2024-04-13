@@ -33,12 +33,20 @@ const admin_fetch_withdrawal = require("./admin_api/fetch_withdrawal");
 app.use("/api/admin/withdrawal/fetch", admin_fetch_withdrawal)
 const raise_min_investment=require("./admin_api/upgrade_account")
 app.use("/api/admin/user/investment_min/raise", raise_min_investment);
+
 const login = require("./api/login");
 app.use("/api/user/login", login);
 const register = require("./api/register");
 app.use("/api/newuser/register", register);
 const complete_registration = require("./api/complete-registration");
 app.use("/api/new_user/complete_registration", complete_registration);
+
+
+// const joint_account_login=require("./joint_account_api/login")
+// app.use("/api/user/joint_account/login",joint_account_login)
+
+// const joint_account_signup=require("./joint_account_api/register")
+// app.use("/api/user/joint_account/signup",joint_account_signup)
 
 const fetch_referral=require("./api/fetch_referrals")
 app.use("/api/user/referral/fetch",fetch_referral)
@@ -102,4 +110,4 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`running on port ${port}`));
 
 
-// /api/user/myaccount
+// api/admin/user/investment_min/raise joint

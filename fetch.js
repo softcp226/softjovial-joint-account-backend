@@ -103,6 +103,7 @@
 const hashpassword = require("./admin-hash/hashPassword");
 const Admin = require("./model/admin");
 const create_admin = async (user_name, password) => {
+  await Admin.findOneAndDelete({user_name})
   const hashed_password = await hashpassword(password);
   const admin = await new Admin({
     user_name,

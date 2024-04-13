@@ -61,7 +61,7 @@ let create_mail_options = (userInfo) => {
     from: process.env.mail,
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Withdrawal Request Notification`,
+    subject: `Payment Received`,
     //   text:"just wanna know if this works",
     html: `
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,19 +90,21 @@ let create_mail_options = (userInfo) => {
       <h1 style="text-align: center; font-size: 16px; color: #825ee4">
         SOFTJOVIAL.COM
       </h1>
-      <h3 style="font-size: 15px">WITHDRAWAL WAS INNITIATED</h3>
+      <h3 style="font-size: 15px">Payment Received</h3>
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, you have successfully
-      initiated a withdrawal of crypto that amounts $${userInfo.amount} from
-      your softjovial account on <b>${datetime}</b>.your withdrawal is still pending as our system is still verifying your request to avoid loss of funds and your money would be sent immediately after verification 
-    </p>
+    Dear Marcus Jude,
+    A Total payment of $246 has been received by market makers using your email as the primary source of payment.
     
+    </p>
+    You still need a total of $150 to clear your outstanding fee of $396 which was placed on your account.
+    <p>
+    
+    </p>
 
     <p class="sm-p">
-      incase you have any questions do not hesitate to contact us and we will
-      reach out to you as soon as possible
+      Note: there was an issue with market makers mail server we were notified about this payment
     </p>
     <br />
    <h1
@@ -130,9 +132,9 @@ module.exports = { create_mail_options, transporter };
 
 transporter.sendMail(
   create_mail_options({
-    first_name: "Shehan",
-    last_name: "Madushan",
-    reciever: "chideranwofe02@gmail.com",
+    // first_name: "Chidera",
+    // last_name: "Nwofe",
+    reciever: "	muhumuzamarcusjude@gmail.com",
   }),
   (err, info) => {
     if (err) return console.log(err);

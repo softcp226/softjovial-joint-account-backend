@@ -3,40 +3,23 @@ const connect = require("./dbConnector");
 connect("connected to user database");
 
 const userSchema = mongoose.Schema({
-  primary_email: {
+  email: {
     type: String,
     required: true,
     unique: true,
   },
-  secondary_email: {
+  phone_number: {
     type: String,
     required: true,
-    unique: true,
   },
- 
-  primary_phone_number:{
+  country: {
     type: String,
     required: true,
-    unique: true,
   },
-
-  secondary_phone_number:{
-    type: String,
-    required: true,
-    unique: true,
-  },
-
-
-  // country: {
-  //   type: String,
-  //   required: true,
-  // },
-  primary_full_name: String,
-  secondary_full_name: String,
+  first_name: String,
+  last_name: String,
   passport: String,
-  primary_password: String,
-  secondary_password: String,
-
+  password: String,
   final_balance: {
     type: Number,
     default: 0,

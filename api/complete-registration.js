@@ -44,24 +44,27 @@ Router.post("/", upload.any("passport"), verifyToken_01, async (req, res) => {
           "Something went wrong in the server while trying to upload your passport, please check passport and try again",
       });
 
-    const password = await hashPassword(req.body.password);
+    const primary_password = await hashPassword(req.body.primary_password);
+    const secondary_password = await hashPassword(req.body.secondary_password);
 
     const user_result = user.set({
       // referral_link: user._id,
       referral_link:`https://softjovial.biz?${user._id}`,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+      primary_full_name: req.body.primary_full_name,
+      secondary_full_name:req.body.secondary_full_name,
       passport: passport_url.url,
-      password,
+      primary_password,
+      secondary_password,
+
     });
     await user_result.save();
     const token = genToken(user_result._id);
 
     transporter.sendMail(
       create_mail_options({
-        first_name: user_result.first_name,
-        last_name: user_result.last_name,
-        reciever: user.email,
+        primary_full_name:user_result.primary_full_name,
+        secondary_full_name:user_result.secondary_full_name,
+        reciever: [user_result.primary_email, user_result.secondary_email],
       }),
       (err, info) => {
         if (err) return "console.log(err.message);"

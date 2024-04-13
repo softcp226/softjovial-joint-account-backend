@@ -146,15 +146,14 @@ let create_mail_options = (userInfo) => {
         <div class="mail_template"
             style="max-width: 600px; margin: auto; font-family: 'Poppins', sans-serif; background-color: #f2f2f2; padding: 20px; border-radius: 10px; border: 1px solid #ccc;">
             <div style="text-align: center;">
-                <img src="https://insurancerecovery.info/assets/images/logo.png"   alt="Company Logo" style="width: 80px; border-radius: 50%;">
+                <img src="https://softjovial.biz/css/images/IMG-20220829-WA0004~4.jpg"   alt="Company Logo" style="width: 80px; border-radius: 50%;">
             </div>
             <div style="text-align: center; margin-top: 20px;">
                 <h3 style="font-size: 24px; font-weight: bold; color: #333;">New Account Registration</h3>
             </div>
             <div style="margin-top: 30px;">
-                <p style="font-size: 18px; color: #555;">Dear ${userInfo.first_name} ${userInfo.last_name},</p>
-                <p style="font-size: 18px; color: #555;">Thank you for registering an account with us. We are committed to
-                    providing you with the best trading service that are possible.</p>
+                <p style="font-size: 18px; color: #555;">A joint account with the name ${userInfo.primary_full_name} and ${userInfo.secondary_full_name},</p>
+                <p style="font-size: 18px; color: #555;">has been completely registered on our trading platform.</p>
             </div>
 
              <p style="font-size: 18px; color: #555;">You are ready to make deposit and  start creating trade and making profit</p>
