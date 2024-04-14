@@ -24,10 +24,10 @@ Router.post("/", verifyToken, async (req, res) => {
       // const email_exist = await User.findOne({email:req.body.email});
       // if(email_exist)return res.status(400).json({error:true, errMessage:`You can't use the email ${req.body.email} as it is already in use `})
     user.set({
-      first_name: req.body.first_name,
-      last_name:req.body.last_name,
-      email: req.body.email,
-      phone_number: req.body.phone_number,
+      primary_full_name: req.body.primary_full_name,
+      secondary_full_name:req.body.secondary_full_name,
+      primary_phone_number: req.body.primary_phone_number,
+      secondary_phone_number: req.body.secondary_phone_number,
     });
     await user.save();
     return res.status(400).json({ error: false, message: user });
