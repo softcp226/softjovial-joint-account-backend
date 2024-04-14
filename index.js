@@ -36,6 +36,12 @@ app.use("/api/admin/user/investment_min/raise", raise_min_investment);
 
 const login = require("./api/login");
 app.use("/api/user/login", login);
+
+const verify_login_code=require("./api/verify_login_code")
+app.use("/api/user/verify_login_code", verify_login_code)
+const resend_login_code=require("./api/resend-login-code")
+app.use("/api/user/resend_login_code",resend_login_code)
+
 const register = require("./api/register");
 app.use("/api/newuser/register", register);
 const complete_registration = require("./api/complete-registration");
@@ -110,4 +116,4 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`running on port ${port}`));
 
 
-// api/admin/user/investment_min/raise joint
+// api/admin/user/investment_min/raise login

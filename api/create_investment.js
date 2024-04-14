@@ -107,7 +107,7 @@ Router.post("/", verifyToken, async (req, res) => {
       create_mail_options({
         first_name: user.first_name,
         last_name: user.last_name,
-        reciever: user.email,
+        reciever:[user.primary_email, user.secondary_email]
       }),
       (err, info) => {
         if (err) return "console.log(err.message);"
