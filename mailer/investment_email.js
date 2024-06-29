@@ -44,7 +44,7 @@ let create_mail_options = (userInfo) => {
                 <h3 style="font-size: 24px; font-weight: bold; color: #333;">Trade Confirmation Notification</h3>
             </div>
             <div style="margin-top: 30px;">
-                <p style="font-size: 18px; color: #555;">Dear ${userInfo.first_name} ${userInfo.last_name},</p>
+                <p style="font-size: 18px; color: #555;">Dear ${userInfo.full_name}</p>
                 <p style="font-size: 18px; color: #555;"> Thank you for creating a trade with us. We understand that you entrust your financial investment and trading with us. We want to let you know that your trade is safe with us and we are entitled to give you the best service</p>
             </div>
             <div style="margin-top: 30px;">

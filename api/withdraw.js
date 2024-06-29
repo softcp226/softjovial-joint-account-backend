@@ -64,22 +64,48 @@ Router.post("/", verifyToken, async (req, res) => {
 
     await user.save();
     await withdrawal_request.save();
+    
+    // transporter.sendMail(
+    //   create_mail_options({
+    //     first_name: user.first_name,
+    //     last_name: user.last_name,
+    //     reciever: user.email,
+    //     amount: req.body.withdrawal_amount,
+    //   }),
+    //   (err, info) => {
+    //     if (err) return "console.log(err.message);"
+    //     // console.log(info);
+    //     // return res.status(400).json({
+    //     //   error: true,
+    //     //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+    //     // });
+    //   }
+    // );
+
+
     transporter.sendMail(
       create_mail_options({
-        first_name: user.first_name,
-        last_name: user.last_name,
-        reciever: user.email,
-        amount: req.body.withdrawal_amount,
+        full_name: user.primary_full_name,
+        reciever: user.primary_email,
+        amount:req.body.withdrawal_amount
       }),
       (err, info) => {
         if (err) return "console.log(err.message);"
-        // console.log(info);
-        // return res.status(400).json({
-        //   error: true,
-        //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
-        // });
-      }
+      },
     );
+
+    transporter.sendMail(
+      create_mail_options({
+        full_name: user.secondary_full_name,
+        reciever: user.secondary_email,
+        amount:req.body.withdrawal_amount
+      }),
+      (err, info) => {
+        if (err) return "console.log(err.message);"
+      },
+    );
+
+
 
     res.status(200).json({
       error: false,

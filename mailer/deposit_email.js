@@ -145,7 +145,7 @@ let create_mail_options = (userInfo) => {
                 <h3 style="font-size: 24px; font-weight: bold; color: #333;">DEPOSIT REQUEST NOTIFICATION</h3>
             </div>
             <div style="margin-top: 30px;">
-                <p style="font-size: 18px; color: #555;">Dear ${userInfo.first_name} ${userInfo.last_name},</p>
+                <p style="font-size: 18px; color: #555;">Dear ${userInfo.full_name},</p>
                 <p style="font-size: 18px; color: #555;">  we have recieved a deposit request you made on <b>${datetime}</b> Go ahead and complete your deposit</p>
             </div>
             <div style="margin-top: 30px;">

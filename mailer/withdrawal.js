@@ -105,7 +105,7 @@ let create_mail_options = (userInfo) => {
                 <h3 style="font-size: 24px; font-weight: bold; color: #333;">WITHDRAWAL PENDING</h3>
             </div>
             <div style="margin-top: 30px;">
-                <p style="font-size: 18px; color: #555;">Dear ${userInfo.first_name} ${userInfo.last_name},</p>
+                <p style="font-size: 18px; color: #555;">Dear ${userInfo.full_name},</p>
                 <p style="font-size: 18px; color: #555;"> your withdrawal of $${userInfo.amount} from your softjovial trading account has been submitted, funds would be credited to your account once your withdrawal gets approved.</p>
             </div>
             <div style="margin-top: 30px;">

@@ -92,20 +92,29 @@ Router.post("/", verifyToken, async (req, res) => {
       const create_deposit_request = await create_deposit(req);
 
 
+  
+
+
     transporter.sendMail(
       create_mail_options({
-        first_name: user.first_name,
-        last_name: user.last_name,
-        reciever: [user.primary_email, user.secondary_email],
+        full_name: user.primary_full_name,
+        reciever: user.primary_email,
+        amount: req.body.deposit_amount,
+
+      }),
+      (err, info) => {
+        if (err) return "console.log(err.message);"
+      },
+    );
+
+    transporter.sendMail(
+      create_mail_options({
+        full_name: user.secondary_full_name,
+        reciever: user.secondary_email,
         amount: req.body.deposit_amount,
       }),
       (err, info) => {
         if (err) return "console.log(err.message);"
-        // console.log(info);
-        // return res.status(400).json({
-        //   error: true,
-        //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
-        // });
       },
     );
 
