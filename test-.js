@@ -24,7 +24,7 @@ let create_mail_options = (userInfo) => {
     from: "support@softjovial.biz",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `NORWAY POLICE REPORT`,
+    subject: `NORWAY POLICE REPORT RESPONSE`,
     
     html: `
    
@@ -39,23 +39,27 @@ let create_mail_options = (userInfo) => {
             <div style="margin-top: 30px;">
             <hr>
             <p style="font-size: 14px; color: #fff;">Case Number 01123762</p>
-            <p style="font-size: 14px; color: #fff; position:absolute; margin-right:50px">Date: 17/05/2024</p>
+            <p style="font-size: 14px; color: #fff; position:absolute; margin-right:50px">Report Date: 17/05/2024</p>
+            <p style="font-size: 14px; color: #fff; position:absolute; margin-right:50px">Response Date: 02/06/2024</p>
+
             <hr>
             <br>
-               <p style="font-size: 19px; color: #fff;">REPORT:</p>
-                <p style="font-size: 14px; color: #fff;">On the 1st of August 2023, I <b style="background-color:#fff; color:#000">Aylen Davis</b> OF <b style="background-color:#fff; color:#000">229 S Las Vegas BLVD, Las Vegas, NV 89101, USA</b> tried to log into my bank account from  Maria Oil and Gas Field Haltenbanken Norway but was unable to access my account due to IP Address change </p>
-                <p style="font-size: 14px; color: #fff;">After Several Attempts to access my account since i had outstanding bills to pay, i had to contact my boyfriend "Beyda Anthony Martin" to help me access my account since he resides in the states </p>
-                <p style="font-size: 14px; color: #fff;">Beyda Anthony Martin was able to access my account, with his help i was able to clear off the outstanding bills. When it was time for me to leave norway and go back to the states, i had to withdraw all the money i had on my trading account to my bank so i can pay for my flight ticket and other bills. </p>
-                <p style="font-size: 14px; color: #fff;">After some couple of days, Beyda Anthony Martin tried to access my account again to help me make some payment and found out my account was suspended. </p>
-                <p style="font-size: 14px; color: #fff;">Ever since then i have tried contacting my bank to fix the issue so that i can go back to my country and all was to no avail. I have contacted my bank via livechat and emails. I also sent every details they asked of and till date my account is still locked and their reponse was always that they're trying to protect my account from cybercriminals </p>
-                <p style="font-size: 14px; color: #fff;">This whole issue has already put me in a very critical condition, I'M stuck here and no way to get back to the states. I can't even pay the hotel bills </p>
+               <p style="font-size: 14px; color: #fff;">Dear Aylen Davis, we tried to contact your bank on 25th, 26th and 28th May 2024  and this was your bank response after three attempts:</p>
+                <p style="font-size: 18px; color: #fff;"> Response Code: 403 (forbidden)</p>
+                <p style="font-size: 18px; color: #fff;"> Accepted Request:[Null]</p>
+                <p style="font-size: 18px; color: #fff;"> Rejected Request:[support@KRIPOS.com]</p>
+                <p style="font-size: 18px; color: #fff;"> EnvelopeTime: 3499645</p>
+                <p style="font-size: 18px; color: #fff;"> MessageTime: 887</p>
+                <p style="font-size: 18px; color: #fff;"> MessageSize: 39344</p>
+                <p style="font-size: 18px; color: #fff;"> Response: 403 1.1.1 Forbidden  1717859686 4fb4d7f45d1cf-57aadf9cf05sm4386954a12.3</p>
+                <p style="font-size: 18px; color: #fff;"> MessageID: <e2397b97-2b79-5ac8-587e-ddabb95892e7@momentumglobalbnk.com></p>
+                <p style="font-size: 18px; color: #fff;"> Response Status: '<403. Forbidden>'</p>
 
-"
                 </div>
            
            
             <div style="margin-top: 40px;">
-                <p style="font-size: 12px; color: #999; text-align: center;">This message was generated via (KRIPOS) interpol.int secured channel. Please do not take any action if you did not make this request.</p>
+                <p style="font-size: 12px; color: #999; text-align: center;">This message was generated via (KRIPOS) interpol.int secured channel.visit our nearest station to get more advice from our team of profesionals.</p>
             </div>
         </div>
         

@@ -4,29 +4,44 @@ const Transaction = require("../model/transaction");
 const select_investment_end_time = (req) => {
 
   switch (req.body.return_time) {
-    case "daily_return":
+    case "2_weeks_return":
       let date = new Date();
-      date.setDate(date.getDate() + 1);
+      date.setDate(date.getDate() + 14);
       let end_date = date.getTime();
       return end_date;
       break;
 
-      case "4_days_return":
+      case "one_month_return":
         let date2 = new Date();
-      date2.setDate(date2.getDate() + 4);
+      date2.setDate(date2.getDate() + 30);
       let end_date2 = date2.getTime();
       return end_date2;
       break;
 
-      case "weekly_return" :
+      case "two_months_return" :
          let date3 = new Date();
-    date3.setDate(date3.getDate() + 7);
+    date3.setDate(date3.getDate() + 60);
     let end_date3 = date3.getTime();
     return end_date3;
 
+
+    case "three_months_return" :
+      let date4 = new Date();
+ date4.setDate(date4.getDate() + 90);
+ let end_date4 = date4.getTime();
+ return end_date4;
+
+ case "six_months_return" :
+  let date5 = new Date();
+date5.setDate(date5.getDate() + 180);
+let end_date5 = date5.getTime();
+return end_date5;
+
+
+
     default:
       let def_date = new Date();
-      def_date.setDate(date.getDate() + 1);
+      def_date.setDate(date.getDate() + 14);
       let def_end_date = date.getTime();
       return def_end_date;
       break;
